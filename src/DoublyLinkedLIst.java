@@ -33,6 +33,16 @@ public class DoublyLinkedLIst
         }
     }
 
+    void lengthOfLinkedList(){
+        int count = 0;
+        Node current = head;
+        while(current!=null){
+            count++;
+            current = current.next;
+        }
+        System.out.printf("Count: %d",count);
+    }
+
     public static void main(String[] args) {
         DoublyLinkedLIst dllObj = new DoublyLinkedLIst(); //Object
         Node first = new Node(10);  //Node 1
@@ -42,8 +52,12 @@ public class DoublyLinkedLIst
         dllObj.addNode(second);
         dllObj.addNode(third);
         dllObj.printNode();
+
         System.out.println();
+
         dllObj.printNodeFromEnd(third);
+
+        dllObj.lengthOfLinkedList();
     }
 }
 
