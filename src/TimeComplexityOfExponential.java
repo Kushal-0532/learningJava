@@ -15,23 +15,23 @@ public class TimeComplexityOfExponential {
     public static void main(String[] args) {
         TimeComplexityOfExponential te = new TimeComplexityOfExponential();
 
-        long n=999999999;
+        long n=1000000000;
         long y = System.nanoTime();
         double res=te.fastExponential(n);
         long z = System.nanoTime();
-        System.out.println("Fast exponentiation: "+(z-y));
+        System.out.println("Fast exponentiation: "+(float)(z-y)/1000000000);
 
         y = System.nanoTime();
-        res =Math.pow(2,1000);
+        res =Math.pow(2,n);
         z = System.nanoTime();
-        System.out.println("Math.pow function:  "+(z-y));
+        System.out.println("Math.pow function:  "+(float)(z-y)/1000000000);
 
         res=1;
         y = System.nanoTime();
-        for(int i=0;i<n;i++){
+        for(int i=0;i<(n*10);i++){
             res*=2;
         }
         z = System.nanoTime();
-        System.out.println("For loop: "+(z-y));
+        System.out.println("For loop: "+(float)(z-y)/1000000000);
     }
 }
